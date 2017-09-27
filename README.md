@@ -1,5 +1,5 @@
 # vue-webpack-demo
-
+[![Build Status](https://travis-ci.org/timeliar/vue-webpack-demo.svg?branch=master)](https://travis-ci.org/timeliar/vue-webpack-demo)
 > A Vue.js project
 
 ## Build Setup
