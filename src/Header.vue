@@ -1,67 +1,101 @@
 <template>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Brand</a>
-            </div>
+    <header id="header">
+        <md-sidenav class="md-left md-fixed" ref="sidebar">
+            <md-toolbar class="md-account-header">
+                <md-list class="md-transparent">
+                    <md-list-item class="md-avatar-list">
+                        <md-avatar class="md-large">
+                            <img src="https://placeimg.com/64/64/people/8" alt="People">
+                        </md-avatar>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">Link</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">One more separated link</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <form class="navbar-form navbar-left">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                    </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
-                </form>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Link</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-    </nav>
+                        <span style="flex: 1"></span>
+
+                        <md-avatar>
+                            <img src="https://placeimg.com/40/40/people/3" alt="People">
+                        </md-avatar>
+
+                        <md-avatar>
+                            <img src="https://placeimg.com/40/40/people/4" alt="People">
+                        </md-avatar>
+                    </md-list-item>
+
+                    <md-list-item>
+                        <div class="md-list-text-container">
+                            <span>John Doe</span>
+                            <span>johndoe@email.com</span>
+                        </div>
+
+                        <md-button class="md-icon-button md-list-action">
+                            <md-icon>arrow_drop_down</md-icon>
+                        </md-button>
+                    </md-list-item>
+                </md-list>
+            </md-toolbar>
+
+            <md-list>
+                <md-list-item @click="$refs.sidebar.toggle()" class="md-primary">
+                    <md-icon>insert_drive_file</md-icon> <span>My files</span>
+                </md-list-item>
+
+                <md-list-item @click="$refs.sidebar.toggle()">
+                    <md-icon>people</md-icon> <span>Shared with me</span>
+                </md-list-item>
+
+                <md-list-item @click="$refs.sidebar.toggle()">
+                    <md-icon>access_time</md-icon> <span>Recent</span>
+                </md-list-item>
+
+                <md-list-item @click="$refs.sidebar.toggle()">
+                    <md-icon>start</md-icon> <span>Starred</span>
+                </md-list-item>
+
+                <md-list-item @click="$refs.sidebar.toggle()">
+                    <md-icon>delete</md-icon> <span>Trash</span>
+                </md-list-item>
+            </md-list>
+        </md-sidenav>
+
+        <md-whiteframe md-elevation="3" class="main-toolbar">
+            <md-toolbar class="md-large">
+                <div class="md-toolbar-container">
+                    <md-button class="md-icon-button" @click="$refs.sidebar.toggle()">
+                        <md-icon>menu</md-icon>
+                    </md-button>
+
+                    <span style="flex: 1"></span>
+
+                    <md-button class="md-icon-button">
+                        <md-icon>search</md-icon>
+                    </md-button>
+                    <md-login ref="login"></md-login>
+                    <md-button class="md-icon-button" @click="$refs.login.openDialog('login-panel')">
+                        <md-icon>account_circle</md-icon>
+                    </md-button>
+                </div>
+
+                <div class="md-toolbar-container">
+                    <h2 class="md-title">My Files</h2>
+
+                    <md-button class="md-fab md-mini">
+                        <md-icon>add</md-icon>
+                    </md-button>
+                </div>
+            </md-toolbar>
+        </md-whiteframe>
+    </header>
 </template>
 
 
 <script>
-    export default {
-        name:'header',
-        data(){
-            return{
+    import MdLogin from "./page/Login.vue";
 
-            }
+    export default {
+        components: {
+            MdLogin
+        },
+        name:'header',
+        data:()=>{
+            return {}
         }
     }
 </script>

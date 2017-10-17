@@ -1,54 +1,142 @@
 <template>
-    <div id="app">
-        <img src="./assets/logo.png">
-        <h1>{{ msg }}</h1>
-        <div v-if="show">你看到我了</div>
-        <a v-bind:href="url">jump</a>
-        <span v-on:click="clickFnc">jump</span>
-    </div>
+    <main class="main-content">
+        <md-list class="md-double-line">
+            <md-subheader class="md-inset">Folders</md-subheader>
+
+            <md-list-item>
+                <md-avatar class="md-avatar-icon">
+                    <md-icon>folder</md-icon>
+                </md-avatar>
+
+                <div class="md-list-text-container">
+                    <span>Photos</span>
+                    <p>Jan 9, 2014</p>
+                </div>
+
+                <md-button class="md-icon-button md-list-action">
+                    <md-icon>info</md-icon>
+                </md-button>
+            </md-list-item>
+
+            <md-list-item>
+                <md-avatar class="md-avatar-icon">
+                    <md-icon>folder</md-icon>
+                </md-avatar>
+
+                <div class="md-list-text-container">
+                    <span>Recipes</span>
+                    <p>Jan 17, 2014</p>
+                </div>
+
+                <md-button class="md-icon-button md-list-action">
+                    <md-icon>info</md-icon>
+                </md-button>
+            </md-list-item>
+
+            <md-list-item>
+                <md-avatar class="md-avatar-icon">
+                    <md-icon>folder</md-icon>
+                </md-avatar>
+
+                <div class="md-list-text-container">
+                    <span>Work</span>
+                    <p>Jan 28, 2014</p>
+                </div>
+
+                <md-button class="md-icon-button md-list-action">
+                    <md-icon>info</md-icon>
+                </md-button>
+
+                <md-divider class="md-inset"></md-divider>
+            </md-list-item>
+
+            <md-subheader class="md-inset">Files</md-subheader>
+
+            <md-list-item>
+                <md-avatar class="md-avatar-icon md-primary">
+                    <md-icon>insert_drive_file</md-icon>
+                </md-avatar>
+
+                <div class="md-list-text-container">
+                    <span>Vacation Itinerary</span>
+                    <p>Jan 20, 2014</p>
+                </div>
+
+                <md-button class="md-icon-button md-list-action">
+                    <md-icon>info</md-icon>
+                </md-button>
+            </md-list-item>
+
+            <md-list-item>
+                <md-avatar md-theme="orange" class="md-avatar-icon md-primary">
+                    <md-icon>collections</md-icon>
+                </md-avatar>
+
+                <div class="md-list-text-container">
+                    <span>Kitchen Remodel</span>
+                    <p>Jan 10, 2014</p>
+                </div>
+
+                <md-button class="md-icon-button md-list-action">
+                    <md-icon>info</md-icon>
+                </md-button>
+            </md-list-item>
+
+            <md-list-item>
+                <md-avatar md-theme="green" class="md-avatar-icon md-primary">
+                    <md-icon>view_list</md-icon>
+                </md-avatar>
+
+                <div class="md-list-text-container">
+                    <span>Grocery Shop</span>
+                    <p>Jan 10, 2014</p>
+                </div>
+
+                <md-button class="md-icon-button md-list-action">
+                    <md-icon>info</md-icon>
+                </md-button>
+            </md-list-item>
+
+            <md-list-item>
+                <md-avatar md-theme="orange" class="md-avatar-icon md-primary">
+                    <md-icon>collections</md-icon>
+                </md-avatar>
+
+                <div class="md-list-text-container">
+                    <span>Weekend Pictures</span>
+                    <p>Jan 10, 2014</p>
+                </div>
+
+                <md-button class="md-icon-button md-list-action">
+                    <md-icon>info</md-icon>
+                </md-button>
+            </md-list-item>
+            <md-list-item>
+                <md-avatar md-theme="blue" class="md-avatar-icon md-primary">
+                    <md-icon>android</md-icon>
+                </md-avatar>
+
+                <div class="md-list-text-container">
+                    <span>周末图片</span>
+                    <p>2014年10月</p>
+                </div>
+
+                <md-button class="md-icon-button md-list-action">
+                    <md-icon>info</md-icon>
+                </md-button>
+            </md-list-item>
+        </md-list>
+    </main>
 </template>
 
 <script>
+
     export default {
         name: 'app',
         data() {
             return {
-                msg: `Hello World`,
-                show: false,
-                url: "https://www.google.com",
-                clickFnc: function () {
-                    alert("1111")
-                }
+
             }
         }
     }
 </script>
-
-<style>
-    #app {
-        font-family: 'Hack', Helvetica, Arial, sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-align: center;
-        color: #2c3e50;
-        margin-top: 60px;
-    }
-
-    h1, h2 {
-        font-weight: normal;
-    }
-
-    ul {
-        list-style-type: none;
-        padding: 0;
-    }
-
-    li {
-        display: inline-block;
-        margin: 0 10px;
-    }
-
-    a {
-        color: #42b983;
-    }
-</style>
